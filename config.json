@@ -1,0 +1,29 @@
+{
+  "model": {
+    "architecture": "efficientnet_b3",
+    "num_classes": 2,
+    "dropout_rate": 0.3,
+    "use_attention": true
+  },
+  "training": {
+    "batch_size": 32,
+    "epochs": 50,
+    "learning_rate": 0.001,
+    "weight_decay": 0.01,
+    "optimizer": "adamw",
+    "scheduler": "cosine",
+    "loss_function": "focal"
+  },
+  "data": {
+    "image_size": [
+      224,
+      224
+    ],
+    "augmentation_factor": 3,
+    "train_val_split": 0.8
+  },
+  "detection": {
+    "yolo_model": "yolov8s.pt",
+    "confidence_threshold": 0.5
+  }
+}
